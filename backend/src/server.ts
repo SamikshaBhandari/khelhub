@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import pool from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import groundRoutes from './routes/groundRoutes.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/grounds', groundRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, async () => {
